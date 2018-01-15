@@ -9,16 +9,23 @@ export class TicTacService {
   ticTacItems: Array<TicTac> = [ {value: 'click me'}, {value: 'click me'}, {value: 'click me'}, {value: 'click me'}, {value: 'click me'},
                                  {value: 'click me'}, {value: 'click me'}, {value: 'click me'}, {value: 'click me'} ];
 
+  currentValue: string = 'X';
+
   getItems(): Observable<TicTac[]> {
     return Observable.of(this.ticTacItems);
   }
 
-  changeXValue(index) {
-    this.ticTacItems[index].value = 'X';
+  changeValue(index) {
+    if (this.ticTacItems[index].value !== 'click me') { return false; }
+    this.ticTacItems[index].value = this.currentValue;
+    this.switchValue();
   }
 
-  changeZeroValue(index) {
-    this.ticTacItems[index].value = '0';
+  switchValue(): void {
+    if (this.currentValue === 'X') {
+      this.currentValue = '0';
+    } else {
+      this.currentValue = 'X';
+    }
   }
-
 }

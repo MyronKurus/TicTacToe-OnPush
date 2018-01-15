@@ -1,8 +1,7 @@
 <h1> Welcome to {{ title }}! </h1>
-<h3>{{ description }}</h3>
 
 <div class="game">
-  <app-tic-tac *ngFor="let item of items; let i = index" [item]="item" (click)="onClick(i)" (dblclick)="onDblClick(i)"></app-tic-tac>
+  <app-tic-tac *ngFor="let item of items; let i = index" [item]="item" (click)="onValueChanging(i)"></app-tic-tac>
 </div>
 
 

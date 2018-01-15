@@ -1,5 +1,6 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, DoCheck, Input } from '@angular/core';
 import { TicTac } from '../../models/tic-tac.model';
+
 
 @Component({
   selector: 'app-tic-tac',
@@ -7,10 +8,11 @@ import { TicTac } from '../../models/tic-tac.model';
   styleUrls: ['./tic-tac.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class TicTacComponent {
+export class TicTacComponent implements DoCheck {
 
   @Input() item: TicTac;
 
-  constructor() { }
-
+  ngDoCheck() {
+    // console.log(this.item);
+  }
 }
