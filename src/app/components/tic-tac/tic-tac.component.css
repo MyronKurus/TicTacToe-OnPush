@@ -1,0 +1,18 @@
+.item {
+  width: 150px;
+  height: 150px;
+  display: inline-block;
+  border: 1px solid black;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  text-align: center;
+}
+
+.item span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+}
